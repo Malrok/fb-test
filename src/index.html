@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>FbTest</title>
@@ -8,7 +9,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: 'xxx',
+        autoLogAppEvents: true,
+        xfbml: true,
+        version: 'v3.1'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/fr_FR/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
   <app-root></app-root>
+  <div class="toto"></div>
 </body>
+
 </html>
