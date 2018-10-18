@@ -17,7 +17,7 @@ export class AppComponent implements AfterViewInit {
   ) { }
 
   ngAfterViewInit() {
-    this.fbMessagerPopup = document.getElementById('fb-root')[0].getElementsByTagName('IFRAME');
+    this.fbMessagerPopup = document.getElementById('fb-root').getElementsByTagName('IFRAME')[0];
     console.log(this.fbMessagerPopup);
   }
 
