@@ -17,28 +17,28 @@ export class AppComponent implements AfterViewInit {
   ) { }
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      const iframes = document.getElementById('fb-root').getElementsByTagName('IFRAME');
-      console.log('iframes ', iframes, ' length: ', iframes.length);
+    // setTimeout(() => {
+    const iframes = document.getElementById('fb-root').getElementsByTagName('IFRAME');
+    console.log('iframes ', iframes, ' length: ', iframes.length);
 
-      let goOn = true;
-      let index = 0;
-      while (goOn) {
-        const iframe = iframes.item[index];
-        console.log('iframe[', index, '] --> ', iframe);
-        if (iframe && iframe.hasAttribute('data-testid')) {
-          console.log('found...');
-          this.fbMessagerPopup = iframe;
-          goOn = false;
-        }
-        if (!iframe) {
-          goOn = false;
-        } else {
-          index++;
-        }
+    let goOn = true;
+    let index = 0;
+    while (goOn) {
+      const iframe = iframes.item(index);
+      console.log('iframe[', index, '] --> ', iframe);
+      if (iframe && iframe.hasAttribute('data-testid')) {
+        console.log('found...');
+        this.fbMessagerPopup = iframe;
+        goOn = false;
       }
-      console.log(this.fbMessagerPopup);
-    });
+      if (!iframe) {
+        goOn = false;
+      } else {
+        index++;
+      }
+    }
+    console.log(this.fbMessagerPopup);
+    // });
   }
 
   toggleMessenger() {
