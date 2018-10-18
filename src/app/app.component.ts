@@ -24,10 +24,9 @@ export class AppComponent implements AfterViewInit {
     let index = 0;
     while (goOn) {
       const iframe = iframes[index];
-      console.log('iframe[', index, '] hasAttribute(data-testid] ', iframe.hasAttribute('data-testid'), ' --> ', iframe);
       if (iframe && iframe.hasAttribute('data-testid')) {
-        this.fbMessagerPopup = iframe;
         console.log('found...');
+        this.fbMessagerPopup = iframe;
         goOn = false;
       }
       goOn = !!iframe;
