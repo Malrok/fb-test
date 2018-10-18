@@ -23,7 +23,7 @@ export class AppComponent implements AfterViewInit {
     let goOn = true;
     let index = 0;
     while (goOn) {
-      const iframe = iframes[index];
+      const iframe = iframes.item[index];
       console.log('iframe[', index, '] --> ', iframe);
       if (iframe && iframe.hasAttribute('data-testid')) {
         console.log('found...');
