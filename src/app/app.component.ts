@@ -18,8 +18,10 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     const iframes = document.getElementById('fb-root').getElementsByTagName('IFRAME');
+    console.log('iframes ', iframes);
     for (let index = 0; index < iframes.length; index++) {
       const iframe = iframes.item[index];
+      console.log('iframe[', index, '] ', iframes);
       if (iframe.hasAttribute('data-testid')) {
         this.fbMessagerPopup = iframe;
       }
