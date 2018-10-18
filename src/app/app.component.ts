@@ -19,17 +19,19 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit() {
     const iframes = document.getElementById('fb-root').getElementsByTagName('IFRAME');
     console.log('iframes ', iframes, ' length: ', iframes.length);
-    // for (let index = 0; index < iframes.length; index++) {
-    let iframe, index = 0;
-    while (iframe = iframes[index++]) {
 
-      // const iframe = iframes[index];
+    let goOn = true;
+    let index = 0;
+    while (goOn) {
+      const iframe = iframes[index];
       console.log('iframe[', index, '] hasAttribute(data-testid] ', iframe.hasAttribute('data-testid'), ' --> ', iframe);
-      if (iframe.hasAttribute('data-testid')) {
+      if (iframe && iframe.hasAttribute('data-testid')) {
         this.fbMessagerPopup = iframe;
         console.log('found...');
-        break;
+        goOn = false;
       }
+      goOn = !!iframe;
+      index++;
     }
     console.log(this.fbMessagerPopup);
   }
