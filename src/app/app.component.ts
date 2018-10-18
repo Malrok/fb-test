@@ -38,7 +38,7 @@ export class AppComponent implements AfterViewInit {
         }
       }
       console.log(this.fbMessagerPopup);
-    }, 500);
+    }, 2000);
   }
 
   toggleMessenger() {
