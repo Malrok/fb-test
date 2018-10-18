@@ -17,7 +17,7 @@ export class AppComponent implements AfterViewInit {
   ) { }
 
   ngAfterViewInit() {
-    this.fbMessagerPopup = document.getElementsByClassName('toto')[0];
+    this.fbMessagerPopup = document.getElementsByClassName('fb_customer_chat_bounce_out_v2')[0];
     console.log(this.fbMessagerPopup);
   }
 
